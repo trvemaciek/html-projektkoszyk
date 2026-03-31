@@ -50,7 +50,7 @@ function loadCart() {
     const PRICE_EL = qs('#totalPrice')
     if (PRICE_EL) PRICE_EL.innerHTML = `${totalPrice}zł`
 
-    if (CART && totalItems > 0) CART.innerHTML = `KOSZYK(${totalItems})`
+    updateCartCounter()
 }
 
 function changeQty(key, delta) {
