@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koszyk</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/d2025ad63a.js" crossorigin="anonymous"></script>
+</head>
+<body onload="loadCart()">
+    <header class="glassmorphed">
+        <div class="banner">
+            <span>Twój koszyk</span>
+        </div>
+        <div class="header-right">
+            <a href="index.html">SKLEP</a>
+            <a id="cartCounter" href="cart.html">KOSZYK</a>
+        </div>
+    </header>
+
+    <div class="shopping-container">
+        <div id="shopping-list"></div>
+        <div id="checkout" class="glassmorphed">
+            <h2>Zawartość koszyka</h2>
+
+            <div id="details">
+
+                <span>Ilość produktów: </span>
+                <span id="productAmount"></span><br>
+
+                <span>Cena całkowita: </span>
+                <span id="totalPrice"></span><br>
+
+            </div>
+            <div class="buttons">
+                <button class="checkout-button">Zamów i zapłać</button>
+                <button type="button" id="clear" class="checkout-button">Wyczyść koszyk</button>
+            </div>
+
+        </div>
+    </div>
+    <footer class="glassmorphed">
+        <p>STRONA PRZYGOTOWANA PRZEZ MIKOŁAJA MAĆKOWIAKA</p>
+    </footer>
+</body>
+</html>
