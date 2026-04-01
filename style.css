@@ -167,6 +167,15 @@ span.amount {
     }
 }
 
+.remove-item {
+    padding: 10px;
+    background: rgb(114, 0, 0);
+}
+
+.remove-item:hover {
+    background: red;
+}
+
 .buttons {
     display: flex;
     justify-content: center;

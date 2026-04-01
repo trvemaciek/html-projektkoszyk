@@ -6,6 +6,21 @@ const ADD_BUTTONS = qsa('.add')
 const CART = qs('#cartCounter')
 const CLEAR = qs('#clear')
 
+//warunek sprawdza czy element shopping-list istnieje na stronie
+
+if (SHOPPING_LIST) {
+        SHOPPING_LIST.addEventListener('click', (e) => {
+        const button = e.target.closest('button')
+        if (!button) return
+        
+        const key = button.closest('.cart-item').dataset.key
+
+        if (button.classList.contains('qty-up')) changeQty(key, +1)
+        if (button.classList.contains('qty-down')) changeQty(key, -1)
+        if (button.classList.contains('remove-item')) removeItem(key)
+    })
+}
+
 function clearCart() {
     localStorage.clear()
     if (SHOPPING_LIST) loadCart()
@@ -27,19 +42,22 @@ function loadCart() {
         totalPrice += VALUE.price * VALUE.qty 
 
         SHOPPING_LIST.insertAdjacentHTML('beforeend', `
-            <div class="cart-item glassmorphed">
+            <div class="cart-item glassmorphed" data-key="${KEY}">
                 <img src="${VALUE.img}">
                 <p class="description">${VALUE.desc}</p>
                 <p class="price">Cena: ${VALUE.price*VALUE.qty}zł</p>
                 <div class="qty-controls">
-                    <button onclick="changeQty('${KEY}', +1)">
+                    <button class="qty-up">
                         <i class="fa-solid fa-angle-up"></i>
                     </button>
                     <span class="amount">${VALUE.qty}</span>
-                    <button onclick="changeQty('${KEY}', -1)">
+                    <button class="qty-down">
                         <i class="fa-solid fa-angle-down"></i>
                     </button>
                 </div>
+                    <button class="remove-item">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
             </div>
         `)
     }
@@ -107,4 +125,9 @@ function updateCartCounter() {
         totalItems += value.qty
     }
     if (CART) CART.innerHTML = totalItems > 0 ? `KOSZYK(${totalItems})` : `KOSZYK`
+}
+
+function removeItem(key) {
+    localStorage.removeItem(key)
+    loadCart()
 }
