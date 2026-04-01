@@ -35,7 +35,7 @@ function loadCart() {
                     <button onclick="changeQty('${KEY}', +1)">
                         <i class="fa-solid fa-angle-up"></i>
                     </button>
-                    <span id="amount">${VALUE.qty}</span>
+                    <span class="amount">${VALUE.qty}</span>
                     <button onclick="changeQty('${KEY}', -1)">
                         <i class="fa-solid fa-angle-down"></i>
                     </button>
@@ -76,7 +76,7 @@ ADD_BUTTONS.forEach(button => {
         const PRODUCT = this.closest('.product')
         const IMG = PRODUCT.querySelector('img').src
         const DESC = PRODUCT.querySelector('.description').textContent
-        const PRICE = PRODUCT.querySelector('.price').getAttribute('value')
+        const PRICE = PRODUCT.querySelector('.price').getAttribute('data-price')
         const KEY = `produkt${VALUE}`
 
         const existing = localStorage.getItem(KEY)

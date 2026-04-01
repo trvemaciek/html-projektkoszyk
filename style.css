@@ -78,7 +78,7 @@ header.glassmorphed {
     }  
 }
 
-.product {
+.product, .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,7 +88,6 @@ header.glassmorphed {
     gap: 20px;
     transition: 0.1s;
     border-radius: 20px;
-
     img {
         width: 300px;
         height: 150px;
@@ -99,14 +98,20 @@ header.glassmorphed {
     p.description {
         flex: 1;
     }
+    p.price {
+        color: rgb(167, 167, 167);
+    }
 
     .add {
         flex-shrink: 0;
         padding: 10px;
         font-size: 20px;
     }
-
     
+}
+
+span.amount {
+    color: rgb(167, 167, 167);
 }
 
 .shopping-container {
@@ -120,26 +125,6 @@ header.glassmorphed {
 
 }
 
-.cart-item {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    padding: 25px;
-    font-size: 1.5em;
-    gap: 20px;
-    border-radius: 20px;
-    justify-content: space-between;
-    transition: 0.1s;
-    img {
-        width: 300px;
-        height: 150px;
-        flex-shrink: 0;
-        border-radius: 20px;
-    }
-    .description {
-        flex: 1;
-    }
-}
 
 #checkout {
     width: 20%;
@@ -165,8 +150,6 @@ header.glassmorphed {
 
 
 }
-
-
 
 .qty-controls {
     display: flex;
