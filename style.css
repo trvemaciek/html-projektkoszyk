@@ -41,7 +41,7 @@
 }
 
 .hidden {
-    opacity: 0;
+    transform: translateX(500px);
     transition: 0.5s;
 }
 
@@ -88,6 +88,7 @@ header.glassmorphed {
     gap: 20px;
     transition: 0.1s;
     border-radius: 20px;
+
     img {
         width: 300px;
         height: 150px;
@@ -194,6 +195,7 @@ footer.glassmorphed {
     padding: 15px;
     font-size: 1.5em;
     transition: 0.5s;
+    
 }
 
 .product:hover, .cart-item:hover {

@@ -110,10 +110,14 @@ ADD_BUTTONS.forEach(button => {
     }
 })
 
+
+let notifTimer = null
+
 function showNotification() {
     const NOTIF = qs('#notification')
     NOTIF.classList.remove("hidden")
-    setTimeout(() => NOTIF.classList.add("hidden"), 5000)
+    if (notifTimer) clearTimeout(notifTimer)
+    notifTimer = setTimeout(() => NOTIF.classList.add("hidden"), 5000)
 }
 
 
